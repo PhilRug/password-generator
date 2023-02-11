@@ -1,66 +1,66 @@
 // Assignment code here
-var lowerChars = "abcdefghijklmnopqrstuvwxyz";
-var symbols = "!@#$%^&*()";
-var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numberChars = "0123456789";
+var lowerChars;
+var thingys;
+var bigLetter;
+var numberChars;
 
+letter = "abcdefghijklmnopqrstuvwxyz".split('');
+numbers = "0123456789".split('');
+thingys = "!@#$%^&*()".split('');
 
+var userChoice;
+var toUpper = function(e) {
+    return e.toUpperCase()
+};
+bigLetter = letter.toUpper;
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+function generatePassword(){
+    
+}
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  passFinal = parseInt(passLength);
-  
+
   passwordText.value = password;
-if (confirm("Would you like to randomize a password?") == true) {
-    passLength = prompt("How many characters would you like your password to be?");
-    document.getElementById("password").value = password;
-function randomLower() {
-        lowerChars(Math.floor(Math.random() * lowerChars.length))
-    }
-    lowerChars.confirm("do you want to use lower characters?")
-    if (lowerChars === true) {
-      password.push()
+
+
+  enter = parseInt(prompt("How many characters would you like your password to be?"));
+  if (!enter) {
+      alert("I thought you wanted a password!");
+      return;
+  } else if (enter < 8 || enter > 128) {
+      enter = parseInt(prompt("You must choose between 8 and 128"));
+      return;
+  } else {
+    letter = confirm("Will this contain Lowercase letters?");
+    bigLetter = confirm("Will this contain Uppercase letters?");
+    numberChars = confirm("Will this contain numbers?");
+    thingys = confirm("Will this contain special characters?");
+  };
+
+  if (!lowerChars && !thingys && !bigLetter && !numberChars) {
+    userChoice = alert("you realize you didnt select anything, right?");
+    //4 choices
+  } else if (lowerChars && thingys && bigLetter && numberChars) {
+    userChoice = letter.concat(numberChars, thingys, bigLetter);
+    //3 choices
+  } else if (lowerChars && thingys && numberChars) {
+    userChoice = letter.concat(thingys, numberChars);
+  } else if (lowerChars && bigLetter && thingys) {
+    userChoice = letter.concat(bigLetter, thingys);
+  } else if (lowerChars && bigLetter && numberChars) {
+    userChoice = letter.concat(bigLetter, numberChars);
   }
-}
-
-function randomUpper() {
-    upperChars(Math.floor(Math.random() * upperChars.length))
-}
-
-
-
-if (upperChars === true) {
-    password.push()
-}
-function randomSymbols() {
-    symbols(Math.floor(Math.random() * symbols.length))
-}
-if (symbols === true) {
-    password.push()
-}
-function randomNumber() {
-    numberChars(Math.floor(Math.random() * numberChars.length))
-}
-if (numberChars === true) {
-    password.push()
+  
+  
+  for (var i = 0; i < enter; i++) {
+    var choices = userChoice[Math.floor(Math.random() * userChoice.length)];
+    password.push(choices);
 }
 }
-for (var i = 0; i <= writePassword; i++) {
-    var generatePassword = Math.floor(Math.random() * chars.length);
-    password += chars.substring(randomNumber, randomNumber +1);
-}
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-function generatePassword() {
-    var passwordString = "";
-}
-
-generateBtn.onclick = function() {
-    prompt("How many characters do you want?")
-}
