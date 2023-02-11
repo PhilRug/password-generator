@@ -17,7 +17,6 @@ bigLetter = letter.toUpper;
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword(){
-    
 }
 
 // Write password to the #password input
@@ -42,18 +41,42 @@ function writePassword() {
     thingys = confirm("Will this contain special characters?");
   };
 
-  if (!lowerChars && !thingys && !bigLetter && !numberChars) {
+  if (!letter && !thingys && !bigLetter && !numberChars) {
     userChoice = alert("you realize you didnt select anything, right?");
     //4 choices
-  } else if (lowerChars && thingys && bigLetter && numberChars) {
+  } else if (letter && thingys && bigLetter && numberChars) {
     userChoice = letter.concat(numberChars, thingys, bigLetter);
     //3 choices
-  } else if (lowerChars && thingys && numberChars) {
+  } else if (letter && thingys && numberChars) {
     userChoice = letter.concat(thingys, numberChars);
-  } else if (lowerChars && bigLetter && thingys) {
+  } else if (letter && bigLetter && thingys) {
     userChoice = letter.concat(bigLetter, thingys);
-  } else if (lowerChars && bigLetter && numberChars) {
+  } else if (letter && bigLetter && numberChars) {
     userChoice = letter.concat(bigLetter, numberChars);
+  } else if (thingys && bigLetter && numberChars) {
+    userChoice = thingys.concat(bigLetter, numberChars); 
+    //2 choices
+  } else if (letter && thingys) {
+    userChoice = letter.concat(thingys);
+  } else if (letter && bigLetter){
+    userChoice = letter.concat(bigLetter);
+  } else if (letter && numberChars){
+    userChoice = letter.concat(numberChars);
+  } else if (thingys && numberChars){
+    userChoice = thingys.concat(numberChars);
+  } else if (thingys && bigLetter){
+    userChoice = thingys.concat(bigLetter);
+  } else if (numberChars && bigLetter){
+    userChoice = numberChars.concat(bigLetter);
+    //1 choice
+  } else if (lowerChars) {
+    userChoice = letter;
+  } else if (numberChars) {
+    userChoice = numberChars; 
+  } else if (thingys) {
+    userChoice = thingys;
+  } else if (bigLetter) {
+    userChoice = bigLetter;
   }
   
   
