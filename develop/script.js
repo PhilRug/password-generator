@@ -1,8 +1,9 @@
 // Assignment code here
 var lowerChars;
-var thingys;
+var symbol;
 var bigLetter;
 var numberChars;
+var buttonPress;
 
 letter = "abcdefghijklmnopqrstuvwxyz".split('');
 numbers = "0123456789".split('');
@@ -41,48 +42,48 @@ function writePassword() {
     thingys = confirm("Will this contain special characters?");
   };
 
-  if (!letter && !thingys && !bigLetter && !numberChars) {
+  if (!lowerChars && !symbol && !bigLetter && !numberChars) {
     userChoice = alert("you realize you didnt select anything, right?");
     //4 choices
-  } else if (letter && thingys && bigLetter && numberChars) {
-    userChoice = letter.concat(numberChars, thingys, bigLetter);
+  } else if (lowerChars && symbol && bigLetter && numberChars) {
+    userChoice = letter.concat(numbers, thingys, bigLetter);
     //3 choices
-  } else if (letter && thingys && numberChars) {
-    userChoice = letter.concat(thingys, numberChars);
-  } else if (letter && bigLetter && thingys) {
+  } else if (lowerChars && symbol && numberChars) {
+    userChoice = letter.concat(thingys, numbers);
+  } else if (lowerChars && bigLetter && symbol) {
     userChoice = letter.concat(bigLetter, thingys);
-  } else if (letter && bigLetter && numberChars) {
-    userChoice = letter.concat(bigLetter, numberChars);
-  } else if (thingys && bigLetter && numberChars) {
-    userChoice = thingys.concat(bigLetter, numberChars); 
+  } else if (lowerChars && bigLetter && numberChars) {
+    userChoice = letter.concat(bigLetter, numbers);
+  } else if (symbol && bigLetter && numberChars) {
+    userChoice = thingys.concat(bigLetter, numbers); 
     //2 choices
-  } else if (letter && thingys) {
+  } else if (lowerChars && symbol) {
     userChoice = letter.concat(thingys);
-  } else if (letter && bigLetter){
+  } else if (lowerChars && bigLetter){
     userChoice = letter.concat(bigLetter);
-  } else if (letter && numberChars){
-    userChoice = letter.concat(numberChars);
-  } else if (thingys && numberChars){
-    userChoice = thingys.concat(numberChars);
-  } else if (thingys && bigLetter){
+  } else if (lowerChars && numberChars){
+    userChoice = letter.concat(numbers);
+  } else if (symbol && numberChars){
+    userChoice = thingys.concat(numbers);
+  } else if (symbol && bigLetter){
     userChoice = thingys.concat(bigLetter);
   } else if (numberChars && bigLetter){
-    userChoice = numberChars.concat(bigLetter);
+    userChoice = numbers.concat(bigLetter);
     //1 choice
   } else if (lowerChars) {
     userChoice = letter;
   } else if (numberChars) {
-    userChoice = numberChars; 
-  } else if (thingys) {
+    userChoice = numbers; 
+  } else if (symbol) {
     userChoice = thingys;
   } else if (bigLetter) {
     userChoice = bigLetter;
-  }
+  };
   
   
   for (var i = 0; i < enter; i++) {
-    var choices = userChoice[Math.floor(Math.random() * userChoice.length)];
-    password.push(choices);
+    var passFinal = userChoice[Math.floor(Math.random() * userChoice.length)];
+    password.push(passFinal);
 }
 }
 // Add event listener to generate button
