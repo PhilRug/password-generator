@@ -26,7 +26,7 @@ function writePassword() {
     } else {
         choiceLetter = confirm("Will this contain Lowercase letters?");
         choiceToUpper = confirm("Will this contain Uppercase letters?");
-        choiceNumberChars = confirm("Will this contain numberChars?");
+        choiceNumberChars = confirm("Will this contain any numbers?");
         choiceThingys = confirm("Will this contain special characters?");
     };
 
