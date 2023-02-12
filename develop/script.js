@@ -1,8 +1,8 @@
 // Assignment code here
-var letter = ["abcdefghijklmnopqrstuvwxyz".split('')];
-var numberChars = ["0123456789".split('')];
-var thingys = ["!@#$%^&*()".split('')];
-var bigLetter = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('')];
+var letter = "abcdefghijklmnopqrstuvwxyz".split('');
+var numberChars = "0123456789".split('');
+var thingys = "!@#$%^&*()".split('');
+var bigLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 var userChoice;
 
 // Get references to the #generate element
@@ -68,9 +68,9 @@ function writePassword() {
         userChoice = bigLetter;
     };
 
-
+    var passFinal = "";
     for (var i = 0; i < enter; i++) {
-        var passFinal = userChoice[Math.floor(Math.random() * userChoice.length)];
+        passFinal += userChoice[Math.floor(Math.random() * userChoice.length)];
 
     }
     var passwordText = document.querySelector("#password");
